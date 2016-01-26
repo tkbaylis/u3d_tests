@@ -3,7 +3,8 @@ using System.Collections;
 
 public class PinBehaviour : MonoBehaviour {
 
-    public GameObject[] allPins;
+    public GameObject[] allPinArray;
+    public GameObject allPins;
     public GameObject previewPanel;
     public GameObject infoPanel;
     public GameObject featuresObjects;
@@ -11,8 +12,11 @@ public class PinBehaviour : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
+        // Instantiate all pin array
+        allPinArray = GameObject.FindGameObjectsWithTag("pin");  // this might be too slow
+
         // Instantiate all pins
-        allPins = GameObject.FindGameObjectsWithTag("pin");  // this might be too slow
+        allPins = GameObject.FindGameObjectWithTag("allPins");
 
         // Hide preview panel, if any
         if (!(previewPanel == null))
@@ -48,9 +52,9 @@ public class PinBehaviour : MonoBehaviour {
     void OnMouseDown()
     {
         // Hide all other pins
-        foreach (GameObject pin in allPins)
+        foreach (GameObject pin in allPinArray)
         {
-            if (pin.name != gameObject.name)        
+            if (pin.name != gameObject.name)
                 pin.SetActive(false);
         }
 
