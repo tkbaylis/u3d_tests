@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class hide_button : MonoBehaviour {
+public class abcdef : MonoBehaviour {
 
     public GameObject[] allPins;
     public GameObject featuresPanel;
@@ -23,7 +23,7 @@ public class hide_button : MonoBehaviour {
     void OnMouseDown()
     {
 
-        Debug.Log("THe button was pressed");
+        Debug.Log("THe button was pressed");  // !!! not working
 
         // Show all pins again
         foreach (GameObject pin in allPins)

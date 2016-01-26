@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class show_panel_hide_other_pins : MonoBehaviour {
+public class PinBehaviour : MonoBehaviour {
 
     public GameObject[] allPins;
     public GameObject previewPanel;
-    public GameObject featuresPanel;
+    public GameObject infoPanel;
+    public GameObject featuresObjects;
 
 	// Use this for initialization
 	void Start () {
@@ -17,9 +18,13 @@ public class show_panel_hide_other_pins : MonoBehaviour {
         if (!(previewPanel == null))
             previewPanel.SetActive(false);
 
-        // Hide panel group, if any
-        if (!(featuresPanel == null))
-            featuresPanel.SetActive(false);
+        // Hide info panel, if any
+        if (!(infoPanel == null))
+            infoPanel.SetActive(false);
+
+        // Hide features objects, if any
+        if (!(featuresObjects == null))
+            featuresObjects.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -49,8 +54,12 @@ public class show_panel_hide_other_pins : MonoBehaviour {
                 pin.SetActive(false);
         }
 
-        // Display panel group, if any
-        if (!(featuresPanel == null))
-            featuresPanel.SetActive(true);
+        // Display info panel, if any
+        if (!(infoPanel == null))
+            infoPanel.SetActive(true);
+
+        // Display features objects, if any
+        if (!(featuresObjects == null))
+            featuresObjects.SetActive(true);
     }
 }

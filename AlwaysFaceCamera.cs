@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class always_face_camera : MonoBehaviour {
+public class AlwaysFaceCamera : MonoBehaviour {
 
     // From Unity Community and Wiki
     // http://answers.unity3d.com/questions/181000/gui-text-always-facing-camera.html
