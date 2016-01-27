@@ -3,21 +3,44 @@ using System.Collections;
 
 public class BackButton : MonoBehaviour {
 
-    public void showAllPins(GameObject pinsParent)
+    /*
+     * Assumes that allPins is the parent of all child pins 
+     */
+    public void showAllPins(GameObject allPins)
     {
-        foreach (Transform child in pinsParent.transform)
+        foreach (Transform child in allPins.transform)
         {
             child.gameObject.SetActive(true);
         }
     }
 
-    public void hideFeaturesObjects(GameObject featuresObjects)
+    /*
+     * Assumes allFeatures is the parent of all feature groups
+     */
+    public void hideAllFeatures(GameObject allFeatures)
     {
-        featuresObjects.SetActive(false);
+        // Hide all child of parent object
+        int childCount = allFeatures.transform.childCount;
+        for (int i = 0; i < childCount; i++)
+        {
+            GameObject fgroup = allFeatures.transform.GetChild(i).gameObject;
+            if (fgroup.name != gameObject.name)
+                fgroup.SetActive(false);
+        }
     }
 
-    public void hideInfoPanel(GameObject infoPanel)
+    /*
+     * Assumes allPanels is the parent of all panel groups
+     */
+    public void hideAllPanels(GameObject allPanels)
     {
-        infoPanel.SetActive(false);
+        // Hide all child of parent object
+        int childCount = allPanels.transform.childCount;
+        for (int i = 0; i < childCount; i++)
+        {
+            GameObject pgroup = allPanels.transform.GetChild(i).gameObject;
+            if (pgroup.name != gameObject.name)
+                pgroup.SetActive(false);
+        }
     }
 }
