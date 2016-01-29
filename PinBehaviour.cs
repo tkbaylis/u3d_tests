@@ -46,8 +46,7 @@ public class PinBehaviour : MonoBehaviour {
             previewPanel.SetActive(false);
     }
 
-    //public void OnMouseDown(Transform pinParentObject)
-    public void OnMouseDown()
+    public void OnMouseUp()
     {
         // Hide all child pins of allPins parent object
         int childCount = allPins.transform.childCount;
