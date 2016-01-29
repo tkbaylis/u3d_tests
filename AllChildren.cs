@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AllChildren : MonoBehaviour {
 
+    // Show all the current object's children
     public void showAll()
     {
         foreach (Transform child in gameObject.transform)
@@ -11,6 +12,7 @@ public class AllChildren : MonoBehaviour {
         }
     }
 
+    // Hide all the current object's children
     public void hideAll()
     {
         foreach (Transform child in gameObject.transform)
