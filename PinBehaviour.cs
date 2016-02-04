@@ -65,8 +65,9 @@ public class PinBehaviour : MonoBehaviour {
         if (!(featuresObjects == null))
             featuresObjects.SetActive(true);
 
-        // Will Debug.Log in C# yield a browser inspector alert as per regular JS?
-        // YES! This shows up in the web inspector (in Firefox, at least)
-        Debug.Log("Pin was clicked");
+        // !!! TODO: Fire a JS event on click
+
+        // This shows up in the both web inspector (in Firefox, at least) and Unity debugger
+        Debug.Log(this.name + " was clicked");
     }
 }

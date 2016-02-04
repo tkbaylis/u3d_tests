@@ -1,4 +1,9 @@
-﻿var target : Transform;
+﻿/*
+ * Based on solution by robertby and Danail at Unity Community
+ * http://answers.unity3d.com/questions/418421/set-camera-orbit-rotation-on-mouse-direction-mouve.html
+ */
+
+var target : Transform;
 var distance = 10.0;
 var cameraSpeed = 5;
 
@@ -25,6 +30,9 @@ function Start () {
 }
 
 function LateUpdate () {
+
+    // Camera motion at LateUpdate ensures all movement complete before camera tracks position.
+
     if (target && GetComponent.<Camera>()) {
 
         //Zooming with mouse
