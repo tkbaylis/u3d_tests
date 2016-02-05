@@ -41,17 +41,17 @@ function LateUpdate () {
 
         //Detect mouse drag;
         if(Input.GetMouseButton(0))   {
-   
+
             x += Input.GetAxis("Mouse X") * xSpeed * 0.02;
-            y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02;       
+            y -= Input.GetAxis("Mouse Y") * ySpeed * 0.02;
         }
         y = ClampAngle(y, yMinLimit, yMaxLimit);
-             
+
         var rotation = Quaternion.Euler(y, x, 0);
         var position = rotation * Vector3(0.0, 0.0, -distance) + target.position;
-         
-        transform.position = Vector3.Lerp (transform.position, position, cameraSpeed*Time.deltaTime);
-        transform.rotation = rotation;     
+
+        transform.position = Vector3.Slerp (transform.position, position, cameraSpeed*Time.deltaTime);
+        transform.rotation = rotation;
     }
 }
 

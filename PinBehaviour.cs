@@ -7,6 +7,7 @@ public class PinBehaviour : MonoBehaviour {
     public GameObject previewPanel;
     public GameObject infoPanel;
     public GameObject featuresObjects;
+    public Transform cameraMount;
 
 	// Use this for initialization
 	void Start () {
@@ -65,9 +66,19 @@ public class PinBehaviour : MonoBehaviour {
         if (!(featuresObjects == null))
             featuresObjects.SetActive(true);
 
+
+        // !!! TODO: Set camera towards new mount/target
+        SetMount(cameraMount);
+
+
         // !!! TODO: Fire a JS event on click
 
         // This shows up in the both web inspector (in Firefox, at least) and Unity debugger
         Debug.Log(this.name + " was clicked");
+    }
+
+    public void SetMount(Transform mount)
+    {
+        Debug.Log("SetMount was called!");
     }
 }
