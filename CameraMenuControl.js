@@ -30,4 +30,6 @@ function Update ()
 function setMount (newMount : Transform)
     {        
         currentMount = newMount;
+
+        Debug.Log("setMount of CMC.js called");
     }
